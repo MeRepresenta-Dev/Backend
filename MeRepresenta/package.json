@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node bin/server",
+    "start": "NODE_ENV=production node bin/app",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node node_modules/nodemon/bin/nodemon bin/server"
-
   },
   "keywords": [],
   "author": "",
