@@ -11,7 +11,7 @@ variable "app_name" {
 }
 
 variable "app_folder" {
-  default = "../app"
+  default = "../MeRepresenta"
 }
 
 variable "az_count" {

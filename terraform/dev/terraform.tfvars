@@ -6,5 +6,4 @@ fargate_cpu = 512
 fargate_memory = 1024
 ac_min_capacity = 2
 ac_max_capacity = 5
-log_retentin = 30
 tag = "dev-01"
