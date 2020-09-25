@@ -4,4 +4,4 @@ const app = express();
 
 app.get('/', (req, res) => res.json({msg: 'ok'}))
 
-app.listen(3000, () => console.log('API OK'));
+app.listen(3000, () => console.log('API OK!'));
