@@ -15,8 +15,8 @@ phases:
       - echo Build started on `date`
       - cd terraform
       - terraform init
-      - TF_VAR_tag=prod-"$CODEBUILD_BUILD_NUMBER" terraform apply -auto-approve -no-color
-    #   - terraform destroy -auto-approve  -no-color
+#       - TF_VAR_tag=prod-"$CODEBUILD_BUILD_NUMBER" terraform apply -auto-approve -no-color
+      - terraform destroy -auto-approve  -no-color
   post_build:
     commands:
       - echo Build completed on `date`
