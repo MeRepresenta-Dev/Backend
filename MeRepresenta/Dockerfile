@@ -1,10 +1,14 @@
-FROM node:12-alpine
+FROM node:12-alpine as builder
+
+RUN apk add --no-cache python make g++
 
 WORKDIR /usr/src/app
 
 COPY ./package*.json ./
 
-RUN npm ci --silent
+RUN npm install
+
+COPY --from=builder node_modules .
 
 COPY . . 
 
