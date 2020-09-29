@@ -1,18 +1,25 @@
-const mongoose = require('mongoose');
+async function main(){
+    /**
+     * Connection URI. Update <username>, <password>, and <your-cluster-url> to reflect your cluster.
+     * See https://docs.mongodb.com/ecosystem/drivers/node/ for more details
+     */
+    const uri = "mongodb+srv://Legiao1234:<password>@cluster0.rlinv.mongodb.net/<dbname>?retryWrites=true&w=majority";
+ 
 
-mongoose.Promise = global.Promise;
+    const client = new MongoClient(uri);
+ 
+    try {
+        // Connect to the MongoDB cluster
+        await client.connect();
+ 
+        // Make the appropriate DB calls
+        await  listDatabases(client);
+ 
+    } catch (e) {
+        console.error(e);
+    } finally {
+        await client.close();
+    }
+}
 
-mongoose.connect('url', {useMongoClient: true});
-
-mongoose.connection.on('connected', () => {
-    console.log('Conectando ao banco de dados!');
-});
-
-mongoose.connection.on('error', (err) => {
-    console.log('Erro na conexão: ' + err);
-});
-
-mongoose.connection.on('disconnect',
-() => {
-    console.log('Desconectado :(');
-});
+main().catch(console.error);
