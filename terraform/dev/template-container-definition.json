@@ -23,7 +23,27 @@
       {
         "name": "NODE_ENV",
         "value": "${env}"
-      }
+      },
+      {
+        "name": "JWT_KEY",
+        "value": "hasyag763gsdhsgd7643743hgshdf"
+      },
+      {
+        "name": "BUCKET_NAME",
+        "value": "cdn-merepresenta"
+      },
+      {
+        "name": "AWS_ACCESS_KEY",
+        "value": "AKIARD575ZGXNQS5JA43"
+      },
+      {
+        "name": "AWS_SECRET_KEY",
+        "value": "pF3prZz4CFdTdennA0i6uRGTgzTtiLMfNOkPJD4p"
+      },
+      {
+        "name": "AWS_REGION",
+        "value": "us-east-2"
+      },
     ]
   }
 ]
