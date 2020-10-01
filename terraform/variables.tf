@@ -11,7 +11,7 @@ variable "app_name" {
 }
 
 variable "app_folder" {
-  default = "../MeRepresenta"
+  default = "../template-api"
 }
 
 variable "az_count" {
