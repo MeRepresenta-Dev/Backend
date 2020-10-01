@@ -6,7 +6,7 @@ const path = require('path');
 module.exports = () => {
   const app = express();
 
-  app.set('port', (process.eventNames.PORT || 200));
+  app.set('port', (process.eventNames.PORT || 3000));
 
   app.use(bodyParser.urlencoded({extended: true}));
   app.use(bodyParser.json());

@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node bin/app",
+    "start": "NODE_ENV=production node index.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node node_modules/nodemon/bin/nodemon bin/server"
+    "dev": "npx nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -24,7 +24,5 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-   
-     
   }
 }
