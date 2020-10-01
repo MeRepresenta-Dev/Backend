@@ -1,5 +1,4 @@
 const app = require('./config/express')();
-
 require('./config/database');
 
 app.listen(app.get('port'), ()=> {
