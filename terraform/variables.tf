@@ -11,7 +11,7 @@ variable "app_name" {
 }
 
 variable "app_folder" {
-  default = "../template-api"
+  default = "../template"
 }
 
 variable "az_count" {
