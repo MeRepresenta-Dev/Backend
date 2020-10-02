@@ -43,6 +43,14 @@
       {
         "name": "AWS_REGION",
         "value": "us-east-2"
+      },
+      {
+        "name": "MONGO_URL",
+        "value": "mongodb+srv://Legiao1234:Legiao1234@cluster0.rlinv.mongodb.net/<dbname>?retryWrites=true&w=majority"
+      },
+      {
+        "name": "CDN_URL",
+        "value": "cdn.merepresenta.org.br"
       }
     ]
   }
