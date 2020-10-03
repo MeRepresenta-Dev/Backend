@@ -13,6 +13,21 @@ class MailController {
     });
     return res.status(201).json({ msg: 'E-mail enviado com sucesso' });
   }
+
+  async sendMail(req, res) {
+    const { to, subject, message } = req.body;
+
+    await mailTransport.sendMail({
+      to,
+      from: 'no-reply@merepresenta.org.br',
+      subject,
+      template: 'email',
+      context: {
+        message,
+      },
+    });
+    return res.status(201).json({ msg: 'E-mail enviado com sucesso' });
+  }
 }
 
 module.exports = new MailController();

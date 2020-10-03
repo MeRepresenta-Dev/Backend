@@ -29,6 +29,30 @@ class SMSController {
         return res.status(500).json({ msg: 'Erro com disparo de SMS' });
       });
   }
+
+  async sendSms(req, res) {
+    const { PhoneNumber, Message } = req.body;
+
+    const params = {
+      PhoneNumber,
+      Message,
+      MessageStructure: 'string',
+    };
+
+    const publishTextPromise = new aws.SNS({ apiVersion: '2010-03-31' })
+      .publish(params)
+      .promise();
+
+    publishTextPromise
+      .then(function (data) {
+        logger.info(`MessageID is ${data.MessageId}`);
+        return res.status(201).json({ msg: 'SMS Enviado com sucesso' });
+      })
+      .catch(function (err) {
+        logger.error(err, err.stack);
+        return res.status(500).json({ msg: 'Erro com disparo de SMS' });
+      });
+  }
 }
 
 module.exports = new SMSController();

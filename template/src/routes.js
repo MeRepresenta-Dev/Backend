@@ -17,7 +17,7 @@ routes.get('/', (req, res) => {
 if (process.env.NODE_ENV === 'development') {
   routes.use(
     '/files',
-    express.static(path.resolve(__dirname, '..', 'tmp', 'uploads')),
+    express.static(path.resolve(__dirname, '..', 'tmp', 'uploads'))
   );
 }
 
@@ -27,7 +27,11 @@ routes.post('/user', UserController.auth);
 // routes.use(authMid);
 
 routes.post('/mail', MailController.store);
+routes.post('/sendmail', MailController.sendMail);
+
 routes.post('/sms', SMSController.main);
+routes.post('/sms', SMSController.sendSms);
+
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
 module.exports = routes;
