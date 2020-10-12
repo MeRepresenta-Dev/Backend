@@ -34,9 +34,7 @@ routes.post('/sms', SMSController.sendSms);
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
-module.exports = routes;
-
-router.post('/register', async (req, res) => {
+routes.post('/register', async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!isEmail(email)) {
@@ -77,7 +75,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-router.post('/login', async (req, res) => {
+routes.post('/login', async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!isEmail(email)) {
@@ -138,7 +136,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.get('/me', authenticate, async (req, res) => {
+routes.get('/me', authenticate, async (req, res) => {
   try {
     const { userId } = req.session;
     const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
@@ -161,7 +159,7 @@ router.get('/me', authenticate, async (req, res) => {
   }
 });
 
-router.delete('/me', authenticate, csrfCheck, async (req, res) => {
+routes.delete('/me', authenticate, csrfCheck, async (req, res) => {
   try {
     const { userId } = req.session;
     const { password } = req.body;
@@ -195,7 +193,7 @@ router.delete('/me', authenticate, csrfCheck, async (req, res) => {
   }
 });
 
-router.put('/logout', authenticate, csrfCheck, async (req, res) => {
+routes.put('/logout', authenticate, csrfCheck, async (req, res) => {
   try {
     const { session } = req;
     await session.expireToken(session.token);
@@ -218,4 +216,4 @@ router.put('/logout', authenticate, csrfCheck, async (req, res) => {
   }
 });
 
-module.exports = router;
+module.exports = routes;
