@@ -10,7 +10,7 @@ const FileController = require('./app/controllers/FileController');
 const Session = require('./app/models/session');
 const User = require('./app/models/user');
 const bcrypt = require('bcryptjs');
-const auth = require('authenticate');
+const auth = require('auth');
 const authMid = require('./app/middlewares/auth');
 const promisify = require('util');
 const jwt = require('jsonwebtoken');
@@ -153,7 +153,7 @@ routes.post('/login', async (req, res) => {
   }
 });
 
-routes.get('/me', authenticate, async (req, res) => {
+routes.get('/me', auth, async (req, res) => {
   try {
     const { userId } = req.session;
     const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
