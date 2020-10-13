@@ -12,6 +12,8 @@ const User = require('./app/models/user');
 const bcrypt = require('bcryptjs');
 const auth = require('authenticate');
 const authMid = require('./app/middlewares/auth');
+const promisify = require('util');
+const jwt = require('jsonwebtoken');
 
 const routes = express.Router();
 
