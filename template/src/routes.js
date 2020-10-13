@@ -1,3 +1,4 @@
+
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
@@ -8,6 +9,7 @@ const SMSController = require('./app/controllers/SMSController');
 const FileController = require('./app/controllers/FileController');
 const Session = require('./app/models/session');
 const User = require('./app/models/user');
+const bcrypt = require('bcryptjs');
 const authMid = require('./app/middlewares/auth');
 
 const routes = express.Router();
