@@ -6,6 +6,8 @@ const MailController = require('./app/controllers/MailController');
 const UserController = require('./app/controllers/UserController');
 const SMSController = require('./app/controllers/SMSController');
 const FileController = require('./app/controllers/FileController');
+const Session = require('./app/models/session');
+const User = require('./app/models/user');
 const authMid = require('./app/middlewares/auth');
 
 const routes = express.Router();
@@ -31,6 +33,9 @@ routes.post('/sendmail', MailController.sendMail);
 
 routes.post('/sms', SMSController.main);
 routes.post('/sms', SMSController.sendSms);
+
+routes.post('/user', user.createuser); //criar usuario
+routes.post('/user', user.save); //salvar usuario
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
