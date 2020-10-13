@@ -7,10 +7,10 @@ const MailController = require('./app/controllers/MailController');
 const UserController = require('./app/controllers/UserController');
 const SMSController = require('./app/controllers/SMSController');
 const FileController = require('./app/controllers/FileController');
-const Session = require('./app/models/session');
+const Session = require('../src/app/models/sessions');
 const User = require('./app/models/user');
 const bcrypt = require('bcryptjs');
-const auth = require('auth');
+// const auth = require('auth');
 const authMid = require('./app/middlewares/auth');
 const promisify = require('util');
 const jwt = require('jsonwebtoken');
@@ -46,8 +46,8 @@ routes.post('/sendmail', MailController.sendMail);
 routes.post('/sms', SMSController.main);
 routes.post('/sms', SMSController.sendSms);
 
-routes.post('/user', user.createUser); //criar usuario
-routes.get('/user', user.createUser);
+// routes.post('/user', user.createUser); //criar usuario
+// routes.get('/user', user.createUser);
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
@@ -153,7 +153,7 @@ routes.post('/login', async (req, res) => {
   }
 });
 
-routes.get('/me', auth, async (req, res) => {
+routes.get('/me', async (req, res) => {
   try {
     const { userId } = req.session;
     const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
@@ -176,7 +176,7 @@ routes.get('/me', auth, async (req, res) => {
   }
 });
 
-routes.delete('/me', authenticate, csrfCheck, async (req, res) => {
+routes.delete('/me', async (req, res) => {
   try {
     const { userId } = req.session;
     const { password } = req.body;
@@ -210,7 +210,7 @@ routes.delete('/me', authenticate, csrfCheck, async (req, res) => {
   }
 });
 
-routes.put('/logout', authenticate, csrfCheck, async (req, res) => {
+routes.put('/logout', async (req, res) => {
   try {
     const { session } = req;
     await session.expireToken(session.token);
