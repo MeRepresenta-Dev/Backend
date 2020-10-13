@@ -15,6 +15,14 @@ const UserSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    cpf: {
+      type: String,
+      required:true,
+    },
+    telefone: {
+      type: Number,
+      required:true
+    }
   },
   {
     timestamps: true,
