@@ -17,6 +17,13 @@ const jwt = require('jsonwebtoken');
 
 const routes = express.Router();
 
+/**
+
+ * @method - POST
+ * @param - /signup
+ * @description - User SignUp
+ */
+
 routes.get('/', (req, res) => {
   res.json({ msg: 'API OK' });
 });
