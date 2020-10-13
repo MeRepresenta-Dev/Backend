@@ -34,8 +34,8 @@ routes.post('/sendmail', MailController.sendMail);
 routes.post('/sms', SMSController.main);
 routes.post('/sms', SMSController.sendSms);
 
-routes.post('/user', user.createuser); //criar usuario
-routes.post('/user', user.save); //salvar usuario
+routes.post('/user', user.createUser); //criar usuario
+routes.get('/user', user.createUser);
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
