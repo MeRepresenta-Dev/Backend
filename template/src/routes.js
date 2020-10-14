@@ -46,7 +46,7 @@ routes.post('/sendmail', MailController.sendMail);
 
 routes.post('/sms', SMSController.main);
 routes.post('/sms', SMSController.sendSms);
-routes.post('/validatesns', SMSController.validateSms);
+routes.post('/validatesms', SMSController.validateSms);
 
 // routes.post('/user', user.createUser); //criar usuario
 // routes.get('/user', user.createUser);
