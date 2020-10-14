@@ -10,7 +10,7 @@ aws.config.update({
 class SMSController {
   async main(req, res) {
     const params = {
-      PhoneNumber: '5521980150741',
+      PhoneNumber: '',
       Message: 'Teste de sms',
       MessageStructure: 'string',
     };
@@ -52,6 +52,16 @@ class SMSController {
         logger.error(err, err.stack);
         return res.status(500).json({ msg: 'Erro com disparo de SMS' });
       });
+  }
+
+  async validateSms(req, res){
+    const {code} = req.body;
+
+    if(!code){
+      return res.status(400).json({msg: 'No code provided'});
+    }
+
+    return res.json({msg: 'Code ok'});
   }
 }
 
