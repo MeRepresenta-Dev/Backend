@@ -42,7 +42,7 @@ class UserController {
 
     register(req, res) {
         const { name, email, password, cpf, telefone, secao, facebook, instagram, twitter } = req.body;
-        bcrypt.hash(password, 6)
+        bcrypt.hash(password, 9)
             .then(async(hash) => {
                 await userModel.create({ name, email, password, cpf, telefone, secao, facebook, instagram, twitter: hash }, (err, newUser) => {
                     if (err) {
