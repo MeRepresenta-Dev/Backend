@@ -46,7 +46,7 @@
       },
       {
         "name": "MONGO_URL",
-        "value": "mongodb+srv://admin:Legiao1234@cluster0.sfox2.mongodb.net/Cluster0?retryWrites=true&w=majority"
+        "value": "mongodb+srv://admin:Legiao1234@cluster0.sfox2.mongodb.net/MeRepresenta?retryWrites=true&w=majority"
       },
       {
         "name": "CDN_URL",
