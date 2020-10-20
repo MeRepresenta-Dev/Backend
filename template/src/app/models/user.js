@@ -4,9 +4,11 @@ const uuid = require('uuid');
 
 dynamoose.aws.config.update({
     region: 'us-east-1',
+    "accessKeyId": process.env.AWS_ACCESS_KEY,
+    "secretAccessKey": process.env.AWS_SECRET_KEY,
 });
 
-dynamoose.local();
+//dynamoose.local();
 
 const UserSchema = new dynamoose.Schema({
 
