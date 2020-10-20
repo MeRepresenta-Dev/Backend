@@ -13,6 +13,9 @@ const bcrypt = require('bcryptjs');
 const authMid = require('./app/middlewares/auth');
 const promisify = require('util');
 const jwt = require('jsonwebtoken');
+const answer = require('./app/models/pontoCandidato');
+const PautaController = require('./app/controllers/PautasTemas');
+const PautasTemas = require('./app/controllers/PautasTemas');
 
 
 const routes = express.Router();
@@ -37,6 +40,9 @@ if (process.env.NODE_ENV === 'development') {
 
 routes.post('/user', UserController.store);
 routes.post('/user', UserController.auth);
+
+routes.post('/pontoCandidato', PautasTemas.store);
+
 
 // routes.use(authMid);
 
