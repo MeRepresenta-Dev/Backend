@@ -64,11 +64,11 @@ const UserSchema = new dynamoose.Schema({
 );
 
 
-UserSchema.pre('save', async function(next) {
-    const hashPassword = await bcrypt.hash(this.password, 10);
-    this.password = hashPassword;
-    next();
-});
+// UserSchema.pre('save', async function(next) {
+//     const hashPassword = await bcrypt.hash(this.password, 10);
+//     this.password = hashPassword;
+//     next();
+// });
 
 const User = dynamoose.model('User', UserSchema);
 module.exports = User;
