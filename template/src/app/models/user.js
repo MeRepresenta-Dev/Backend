@@ -2,11 +2,13 @@ const bcrypt = require('bcryptjs');
 const dynamoose = require('dynamoose');
 const uuid = require('uuid');
 
-dynamoose.aws.config.update({
+dynamoose.aws.sdk.config.update({
     region: 'us-east-1',
+    "accessKeyId": process.env.AWS_ACCESS_KEY,
+    "secretAccessKey": process.env.AWS_SECRET_KEY,
 });
 
-dynamoose.local();
+//dynamoose.local();
 
 const UserSchema = new dynamoose.Schema({
 
@@ -62,11 +64,11 @@ const UserSchema = new dynamoose.Schema({
 );
 
 
-UserSchema.pre('save', async function(next) {
-    const hashPassword = await bcrypt.hash(this.password, 10);
-    this.password = hashPassword;
-    next();
-});
+// UserSchema.pre('save', async function(next) {
+//     const hashPassword = await bcrypt.hash(this.password, 10);
+//     this.password = hashPassword;
+//     next();
+// });
 
 const User = dynamoose.model('User', UserSchema);
 module.exports = User;
