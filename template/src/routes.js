@@ -62,7 +62,7 @@ routes.get('/register', UserController.register);
 
 routes.get('/register', async(req, res) => {
     try {
-        const { userId } = req.session;
+        const { name } = req.user;
         const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
 
         res.json({
