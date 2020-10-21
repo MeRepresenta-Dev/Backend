@@ -57,6 +57,31 @@ routes.post('/register', UserController.register) // Cria conta no banco de dado
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
+routes.get('/register', UserController.register);
+
+
+routes.get('/register', async(req, res) => {
+    try {
+        const { userId } = req.session;
+        const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
+
+        res.json({
+            title: 'Authentication successful',
+            detail: 'Successfully authenticated user',
+            user,
+        });
+    } catch (err) {
+        res.status(401).json({
+            errors: [{
+                title: 'Unauthorized',
+                detail: 'Not authorized to access this route',
+                errorMessage: err.message,
+            }, ],
+        });
+    }
+});
+
+
 routes.post('/register', async(req, res) => {
     try {
         const { email, password } = req.body;
