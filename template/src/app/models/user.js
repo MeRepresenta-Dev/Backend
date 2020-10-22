@@ -15,7 +15,7 @@ const UserSchema = new dynamoose.Schema({
         id: {
             type: String,
             hashKey: true,
-            default: uuid.v1(),
+            default: uuid.v4,
         },
 
         name: {
