@@ -13,9 +13,6 @@ const bcrypt = require('bcryptjs');
 const authMid = require('./app/middlewares/auth');
 const promisify = require('util');
 const jwt = require('jsonwebtoken');
-const answer = require('./app/models/pontoCandidato');
-const PautaController = require('./app/controllers/PautasTemas');
-const PautasTemas = require('./app/controllers/PautasTemas');
 
 
 const routes = express.Router();
@@ -41,9 +38,6 @@ if (process.env.NODE_ENV === 'development') {
 routes.post('/user', UserController.store);
 routes.post('/user', UserController.auth);
 
-routes.post('/pontoCandidato', PautasTemas.store);
-
-
 // routes.use(authMid);
 
 routes.post('/mail', MailController.store);
@@ -56,31 +50,6 @@ routes.post('/validatesms', SMSController.validateSms);
 routes.post('/register', UserController.register) // Cria conta no banco de dados
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
-
-routes.get('/register', UserController.register);
-
-
-routes.get('/register', async(req, res) => {
-    try {
-        const { name } = req.user;
-        const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
-
-        res.json({
-            title: 'Authentication successful',
-            detail: 'Successfully authenticated user',
-            user,
-        });
-    } catch (err) {
-        res.status(401).json({
-            errors: [{
-                title: 'Unauthorized',
-                detail: 'Not authorized to access this route',
-                errorMessage: err.message,
-            }, ],
-        });
-    }
-});
-
 
 routes.post('/register', async(req, res) => {
     try {
