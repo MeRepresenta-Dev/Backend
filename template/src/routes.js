@@ -53,8 +53,8 @@ routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
 routes.get('/register', async(req, res) => {
     try {
-        const { userId } = req.session;
-        const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
+        const { name } = req.session;
+        const user = await User.findById({ _id: userId }, { name: 1, _id: 0 });
 
         res.json({
             title: 'Authentication successful',
