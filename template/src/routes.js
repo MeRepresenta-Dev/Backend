@@ -51,39 +51,21 @@ routes.post('/register', UserController.register) // Cria conta no banco de dado
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
-routes.post('/register', async(req, res) => {
+routes.get('/register', async(req, res) => {
     try {
-        const { email, password } = req.body;
-        if (!isEmail(email)) {
-            throw new Error('Email must be a valid email address.');
-        }
-        if (typeof password !== 'string') {
-            throw new Error('Password must be a string.');
-        }
-        const user = new User({ email, password });
-        const persistedUser = await user.save();
-        const userId = persistedUser._id;
+        const { userId } = req.session;
+        const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
 
-        const session = await initSession(userId);
-
-        res
-            .cookie('token', session.token, {
-                httpOnly: true,
-                sameSite: true,
-                maxAge: 1209600000,
-                secure: process.env.NODE_ENV === 'production',
-            })
-            .status(201)
-            .json({
-                title: 'User Registration Successful',
-                detail: 'Successfully registered new user',
-                csrfToken: session.csrfToken,
-            });
+        res.json({
+            title: 'Authentication successful',
+            detail: 'Successfully authenticated user',
+            user,
+        });
     } catch (err) {
-        res.status(400).json({
+        res.status(401).json({
             errors: [{
-                title: 'Registration Error',
-                detail: 'Something went wrong during registration process.',
+                title: 'Unauthorized',
+                detail: 'Not authorized to access this route',
                 errorMessage: err.message,
             }, ],
         });
