@@ -1,10 +1,10 @@
 class FileController {
   async main(req, res) {
-    const objResponse = req.file;
+    const objResponse = req.photo;
 
-    objResponse.fileUrl = `${process.env.CDN_URL}/${req.file.key}`;
+    objResponse.photoUrl = `${process.env.CDN_URL}/${req.photo.key}`;
 
-    return res.status(201).json(req.file);
+    return res.status(201).json(req.photo);
   }
 }
 
