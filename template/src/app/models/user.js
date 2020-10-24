@@ -55,7 +55,11 @@ const UserSchema = new dynamoose.Schema({
             required: true,
         },
 
-
+       photo: {
+          type: String,
+          required: true,
+         
+       },
     },
 
     {
