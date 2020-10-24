@@ -51,8 +51,6 @@ routes.post('/register', UserController.register) // Cria conta no banco de dado
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
 
-}
-
 routes.get('/register', async(req, res) => {
     try {
         const { name } = req.session;
