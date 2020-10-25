@@ -60,7 +60,7 @@ const UserSchema = new dynamoose.Schema({
           required: true,
 
        },
-    },
+};
 
     {
         timestamps: true,
@@ -149,7 +149,7 @@ exports.list = (perPage, page) => {
     });
 };
 
-function requestVerificationCode(phone) {
+function requestVerificationCode(PhoneNumber) {
     const url = `${apiBaseUrl}/request-verification-code`;
     const headers = new Headers();
     headers.append('Content-Type', defaultHeaders['Content-Type']);
@@ -164,7 +164,7 @@ function requestVerificationCode(phone) {
     return fetch(request, init);
 }
 
-function verifyVerificationCode(code, phoneNumber) {
+function verifyVerificationCode(code, PhoneNumber) {
     const url = `${apiBaseUrl}/verify-verification-code`;
     const headers = new Headers();
     headers.append('Content-Type', defaultHeaders['Content-Type']);
