@@ -60,7 +60,6 @@ const UserSchema = new dynamoose.Schema({
           required: true,
 
        },
-    },
 
     {
         timestamps: true,
