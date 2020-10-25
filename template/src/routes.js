@@ -49,7 +49,7 @@ routes.post('/validatesms', SMSController.validateSms);
 
 routes.post('/register', UserController.register) // Cria conta no banco de dados
 
-routes.post('/file', multer(multerConfig).single('file'), FileController.main);
+routes.post('/file', multer(multerConfig).single('photo'), FileController.main);
 
 routes.get('/register', async(req, res) => {
     try {

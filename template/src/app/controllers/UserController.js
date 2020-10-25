@@ -44,7 +44,7 @@ class UserController {
         const { name, email, password, cpf, telefone, secao, facebook, instagram, twitter, photo } = req.body;
         bcrypt.hash(password, 9)
             .then(async(hash) => {
-                await userModel.create({ name, email, password, cpf, telefone, secao, facebook, instagram, twitter: hash, photo }, (err, newUser) => {
+                await userModel.create({ name, email, password, cpf, telefone, secao, facebook, instagram, photo, twitter: hash }, (err, newUser) => {
                     if (err) {
                         console.log(err);
                         return res.status(400).json({ error: 'O Usuário já existe!' })
