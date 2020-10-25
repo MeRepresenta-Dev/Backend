@@ -60,13 +60,7 @@ const UserSchema = new dynamoose.Schema({
           required: true,
 
        },
-}),
-
-    {
-        timestamps: true,
-    }
-);
-
+});
 
 // UserSchema.pre('save', async function(next) {
 //     const hashPassword = await bcrypt.hash(this.password, 10);
