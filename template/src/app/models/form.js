@@ -34,10 +34,6 @@ const UserSchema = new dynamoose.Schema({
             type: String,
             required: true,
         },
-        telefone: {
-            type: Number,
-            required: true,
-        },
         
 });
 
