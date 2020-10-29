@@ -19,7 +19,6 @@ class TemasController {
                     }
 
                     return res.json({ message: 'resposta nao salva!' })
-                })
             }
     }
 module.exports = new PautasController();
