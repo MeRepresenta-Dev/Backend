@@ -2,6 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const temas = require('../models/temas');
 const aws = require('aws-sdk');
+
 aws.config.update({
     secretAccessKey: process.env.AWS_SECRET_KEY,
     accessKeyId: process.env.AWS_ACCESS_KEY,
@@ -22,4 +23,4 @@ class TemasController {
                     return res.json({ message: 'resposta nao salva!' })
             }
     }
-module.exports = new PautasController();
+module.exports = new TemasController();
