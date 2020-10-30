@@ -49,7 +49,7 @@ const UserSchema = new dynamoose.Schema({
 });
 
 const Temas = dynamoose.model('Temas', UserSchema);
-module.exports = Tema;
+module.exports = Temas;
 
 exports.createTema = (userData) => {
     const userTema = new User(userTemaData);
