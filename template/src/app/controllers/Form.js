@@ -19,7 +19,7 @@ class FormController {
     }
 
    
-    registerForm(req, res) {
+    async registerForm(req, res) {
         const { identificacao, cor, candidaturacoletiva, deficiencia } = req.body;
                 await formModel.create({ identificacao, cor, candidaturacoletiva, deficiencia: hash }, (err, newUserForm) => {
                     if (err) {
