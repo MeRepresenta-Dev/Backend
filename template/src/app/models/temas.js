@@ -1,6 +1,7 @@
 const bcrypt = require('bcryptjs');
 const dynamoose = require('dynamoose');
 const uuid = require('uuid');
+const aws = require('aws-sdk');
 
 dynamoose.aws.sdk.config.update({
     region: 'us-east-1',
