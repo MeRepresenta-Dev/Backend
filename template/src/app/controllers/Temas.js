@@ -12,9 +12,9 @@ aws.config.update({
 class TemasController {
 
 
-    save(req, res) {
+   async save(req, res) {
         const { genero, racismo, lgbt, povostradicionais, segurancapublica, comunicacao, democracia, meioambiente } = req.body;
-          //      await temas.create({ answer: hash }, (err) => {
+                await temas.create({ answer: hash }, (err) => {
                     if (err) {
                         console.log(err);
                         return res.status(400).json({ error: 'reposta salva!' })
