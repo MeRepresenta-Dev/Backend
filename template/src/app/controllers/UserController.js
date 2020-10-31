@@ -53,23 +53,23 @@ class UserController {
 
         const code = Math.floor(1000 + Math.random() * 9000);
 
-        const params = {
-          PhoneNumber: telefone,
-          Message: `Me Representa - código: ${code}`,
-          MessageStructure: 'string',
-        };
+//         const params = {
+//           PhoneNumber: telefone,
+//           Message: `Me Representa - código: ${code}`,
+//           MessageStructure: 'string',
+//         };
 
-        const publishTextPromise = new aws.SNS({ apiVersion: '2010-03-31' })
-        .publish(params)
-        .promise();
+//         const publishTextPromise = new aws.SNS({ apiVersion: '2010-03-31' })
+//         .publish(params)
+//         .promise();
 
-        publishTextPromise
-          .then(function (data) {
-            logger.info(`MessageID is ${data.MessageId}`);
-          })
-          .catch(function (err) {
-            logger.error(err, err.stack);
-          });
+//         publishTextPromise
+//           .then(function (data) {
+//             logger.info(`MessageID is ${data.MessageId}`);
+//           })
+//           .catch(function (err) {
+//             logger.error(err, err.stack);
+        });
 
 
         bcrypt.hash(password, 9)
