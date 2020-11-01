@@ -101,26 +101,26 @@ routes.get('/registerForm', async(req, res) => {
     }
 });
 
-// routes.get('/save', async(req, res) => {
-//     try {
-//         const { genero } = req.session;
-//         const user = await User.findById({ _id: userId }, { name: 1, _id: 0 });
+ routes.get('/save', async(req, res) => {
+     try {
+         const { genero } = req.session;
+         const user = await User.findById({ _id: userId }, { name: 1, _id: 0 });
 
-//         res.json({
-//             title: 'Authentication successful',
-//             detail: 'Successfully authenticated user',
-//             user,
-//         });
-//     } catch (err) {
-//         res.status(401).json({
-//             errors: [{
-//                 title: 'Unauthorized',
-//                 detail: 'Not authorized to access this route',
-//                 errorMessage: err.message,
-//             }, ],
-//         });
-//     }
-// });
+         res.json({
+             title: 'Authentication successful',
+             detail: 'Successfully authenticated user',
+             user,
+         });
+     } catch (err) {
+        res.status(401).json({
+            errors: [{
+                title: 'Unauthorized',
+                detail: 'Not authorized to access this route',
+                 errorMessage: err.message,
+             }, ],
+         });
+     }
+ });
 
 routes.post('/login', async(req, res) => {
     try {
