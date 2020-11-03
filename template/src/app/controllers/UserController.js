@@ -69,7 +69,6 @@ class UserController {
 //           })
 //           .catch(function (err) {
 //             logger.error(err, err.stack);
-        });
 
 
         bcrypt.hash(password, 9)
