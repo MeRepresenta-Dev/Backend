@@ -53,7 +53,7 @@ routes.post('/validatesms', SMSController.validateSms);
 
 routes.post('/register', UserController.register) // Cria conta no banco de dados
 routes.post('/registerForm', FormController.registerForm)
-routes.post('/save', Temas.save) // Cria conta no banco de dados
+//routes.post('/save', Temas.save) // Cria conta no banco de dados
 
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
@@ -80,47 +80,7 @@ routes.get('/register', async(req, res) => {
 });
 
 
-routes.get('/registerForm', async(req, res) => {
-    try {
-        const { identificacao } = req.session;
-        const userForm = await UserForm.findById({ _id: userId }, { name: 1, _id: 0 });
 
-        res.json({
-            title: 'Authentication successful',
-            detail: 'Successfully authenticated user',
-            user,
-        });
-    } catch (err) {
-        res.status(401).json({
-            errors: [{
-                title: 'Unauthorized',
-                detail: 'Not authorized to access this route',
-                errorMessage: err.message,
-            }, ],
-        });
-    }
-});
-
- routes.get('/save', async(req, res) => {
-     try {
-         const { genero } = req.session;
-         const user = await User.findById({ _id: userId }, { name: 1, _id: 0 });
-
-         res.json({
-             title: 'Authentication successful',
-             detail: 'Successfully authenticated user',
-             user,
-         });
-     } catch (err) {
-        res.status(401).json({
-            errors: [{
-                title: 'Unauthorized',
-                detail: 'Not authorized to access this route',
-                 errorMessage: err.message,
-             }, ],
-         });
-     }
- });
 
 routes.post('/login', async(req, res) => {
     try {
