@@ -12,54 +12,249 @@ dynamoose.aws.sdk.config.update({
 
 const UserSchema = new dynamoose.Schema({
 
-        id: {
-            type: String,
-            hashKey: true,
-            default: uuid.v4,
-        },
+    id: {
+        type: String,
+        hashKey: true,
+        default: uuid.v4,
+    },
 
-        name: {
-            type: String,
-            required: true,
-        },
-        email: {
-            type: String,
-            required: true,
-        },
-        password: {
-            type: String,
-            required: true,
-        },
-        cpf: {
-            type: String,
-            required: true,
-        },
-        telefone: {
-            type: Number,
-            required: true,
-        },
-        secao: {
-            type: Number,
-            required: true,
-        },
-        facebook: {
-            type: String,
-            required: true,
-        },
-        instagram: {
-            type: String,
-            required: true,
-        },
-        twitter: {
-            type: String,
-            required: true,
-        },
+    name: {
+        type: String,
+        required: true,
+    },
+    email: {
+        type: String,
+        required: true,
+    },
+    password: {
+        type: String,
+        required: true,
+    },
+    cpf: {
+        type: String,
+        required: true,
+    },
+    telefone: {
+        type: Number,
+        required: true,
+    },
+    secao: {
+        type: Number,
+        required: true,
+    },
+    facebook: {
+        type: String,
+        required: true,
+    },
+    instagram: {
+        type: String,
+        required: true,
+    },
+    twitter: {
+        type: String,
+        required: true,
+    },
 
-     photo: {
-          type: String,
-          required: true,
+    photo: {
+        type: String,
+        required: true,
 
-       },
+    },
+
+    pauta1: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta2: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta3: {
+        type: String,
+        required: true,
+
+    },
+    pauta5: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta6: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta7: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta8: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta9: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta10: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta11: {
+        type: String,
+        required: true,
+
+    },
+
+
+
+    pauta12: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta13: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta14: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta15: {
+        type: String,
+        required: true,
+
+    },
+
+
+
+    pauta16: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta17: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta18: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta19: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta20: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta21: {
+        type: String,
+        required: true,
+
+    },
+
+    pauta22: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta23: {
+        type: String,
+        required: true,
+
+    },
+
+
+    pauta24: {
+        type: String,
+        required: true,
+
+    },
+
+    genero: {
+        type: isInteger,
+        required: true,
+    },
+    raca: {
+        type: isInteger,
+        required: true,
+    },
+    lgbt: {
+        type: isInteger,
+        required: true,
+    },
+    povostradicionais: {
+        type: isInteger,
+        required: true,
+    },
+    politicassociais: {
+        type: isInteger,
+        required: true,
+    },
+    segurancapublica: {
+        type: isInteger,
+        required: true,
+    },
+    drogas: {
+        type: isInteger,
+        required: true,
+    },
+    comunicacao: {
+        type: isInteger,
+        required: true,
+    },
+    democracia: {
+        type: isInteger,
+        required: true,
+    },
+
+    meioambiente: {
+        type: isInteger,
+        required: true,
+
+    },
+
+
 });
 
 // UserSchema.pre('save', async function(next) {

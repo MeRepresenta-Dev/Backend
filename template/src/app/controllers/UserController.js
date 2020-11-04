@@ -5,9 +5,9 @@ const logger = require('../../helper/logger');
 const userModel = require('../models/user');
 
 aws.config.update({
-  secretAccessKey: process.env.AWS_SECRET_KEY,
-  accessKeyId: process.env.AWS_ACCESS_KEY,
-  region: 'us-east-1',
+    secretAccessKey: process.env.AWS_SECRET_KEY,
+    accessKeyId: process.env.AWS_ACCESS_KEY,
+    region: 'us-east-1',
 });
 
 class UserController {
@@ -49,26 +49,26 @@ class UserController {
     }
 
     register(req, res) {
-        const { name, email, password, cpf, telefone, secao, facebook, instagram, twitter, photo } = req.body;
+        const { name, email, password, cpf, telefone, secao, facebook, instagram, twitter, photo, pauta1, pauta2, pauta3, pauta4, pauta5, pauta6, pauta7, pauta8, pauta9, pauta10, pauta11, pauta12, pauta13, pauta14, pauta15, pauta16, pauta17, pauta18, pauta19, pauta20, pauta21, pauta22, pauta23, pauta24, genero, raca, lgbt, povostradicionais, politicassociais, segurancapublica, drogas, comunicacao, democracia, meioambiente } = req.body;
 
         const code = Math.floor(1000 + Math.random() * 9000);
 
-//         const params = {
-//           PhoneNumber: telefone,
-//           Message: `Me Representa - código: ${code}`,
-//           MessageStructure: 'string',
-//         };
+        //         const params = {
+        //           PhoneNumber: telefone,
+        //           Message: `Me Representa - código: ${code}`,
+        //           MessageStructure: 'string',
+        //         };
 
-//         const publishTextPromise = new aws.SNS({ apiVersion: '2010-03-31' })
-//         .publish(params)
-//         .promise();
+        //         const publishTextPromise = new aws.SNS({ apiVersion: '2010-03-31' })
+        //         .publish(params)
+        //         .promise();
 
-//         publishTextPromise
-//           .then(function (data) {
-//             logger.info(`MessageID is ${data.MessageId}`);
-//           })
-//           .catch(function (err) {
-//             logger.error(err, err.stack);
+        //         publishTextPromise
+        //           .then(function (data) {
+        //             logger.info(`MessageID is ${data.MessageId}`);
+        //           })
+        //           .catch(function (err) {
+        //             logger.error(err, err.stack);
 
 
         bcrypt.hash(password, 9)
