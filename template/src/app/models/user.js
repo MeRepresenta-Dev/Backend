@@ -263,11 +263,11 @@ const UserSchema = new dynamoose.Schema({
 //     next();
 // });
 
-const Teste = dynamoose.model('Teste', TesteSchema);
-module.exports = Teste;
+const User = dynamoose.model('User', UserSchema);
+module.exports = User;
 
 exports.createUser = (userData) => {
-    const user = new Teste(userData);
+    const user = new User(userData);
     return user.save();
 };
 
@@ -278,7 +278,7 @@ exports.getById = (req, res) => {
 };
 
 exports.findById = (id) => {
-    return Teste.findById(id).then((result) => {
+    return User.findById(id).then((result) => {
         result = result.toJSON();
         delete result._id;
         delete result.__v;
