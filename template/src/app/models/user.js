@@ -78,6 +78,12 @@ const UserSchema = new dynamoose.Schema({
         required: true,
 
     },
+  
+  pauta4: {
+        type: String,
+        required: true,
+
+    },
     pauta5: {
         type: String,
         required: true,
