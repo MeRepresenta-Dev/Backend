@@ -44,15 +44,15 @@ const UserSchema = new dynamoose.Schema({
     },
     facebook: {
         type: String,
-        required: true,
+       
     },
     instagram: {
         type: String,
-        required: true,
+        
     },
     twitter: {
         type: String,
-        required: true,
+        
     },
 
     photo: {
