@@ -75,6 +75,11 @@ const UserSchema = new dynamoose.Schema({
         type: String,
         required: true,
     },
+ 
+  identidadedeGenero: {
+        type: String,
+        required: true,
+    },
   
 
     pauta1: {
