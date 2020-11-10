@@ -60,6 +60,22 @@ const UserSchema = new dynamoose.Schema({
         required: true,
 
     },
+   descricaoCandidaturaColetiva: {
+        type: String,
+        required: true,
+
+    },
+  
+  cor: {
+        type: String,
+        required: true,
+    },
+  
+  orientacaoSexualAfetiva: {
+        type: String,
+        required: true,
+    },
+  
 
     pauta1: {
         type: String,
