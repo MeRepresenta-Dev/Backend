@@ -30,6 +30,11 @@ const UserSchema = new dynamoose.Schema({
         type: String,
         required: true,
     },
+  
+  confirmaSenha: {
+        type: String,
+        required: true,
+    },
     cpf: {
         type: String,
         required: true,
@@ -80,7 +85,19 @@ const UserSchema = new dynamoose.Schema({
         type: String,
         required: true,
     },
-  
+     
+  deficiencia: {
+        type: String,
+        required: true,
+
+    },
+comunicacao: {
+        type: String,
+        required: true,
+
+    },
+
+
 
     pauta1: {
         type: String,
