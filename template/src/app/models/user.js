@@ -91,13 +91,6 @@ const UserSchema = new dynamoose.Schema({
         required: true,
 
     },
-comunicacao: {
-        type: String,
-        required: true,
-
-    },
-
-
 
     pauta1: {
         type: String,
