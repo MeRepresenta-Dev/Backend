@@ -39,7 +39,7 @@ const UserSchema = new dynamoose.Schema({
         required: true,
     },
     secao: {
-        type: Number,
+        type: String,
         required: true,
     },
     facebook: {
@@ -218,44 +218,44 @@ const UserSchema = new dynamoose.Schema({
     },
 
     genero: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     raca: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     lgbt: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     povostradicionais: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     politicassociais: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     segurancapublica: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     drogas: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     comunicacao: {
-        type: isInteger,
+        type: String,
         required: true,
     },
     democracia: {
-        type: isInteger,
+        type: String,
         required: true,
     },
 
     meioambiente: {
-        type: isInteger,
+        type:String,
         required: true,
 
     },
