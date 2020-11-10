@@ -218,44 +218,44 @@ const UserSchema = new dynamoose.Schema({
     },
 
     genero: {
-        type: String,
+        type: Number,
         required: true,
     },
     raca: {
-        type: String,
+        type: Number,
         required: true,
     },
     lgbt: {
-        type: String,
+        type: Number,
         required: true,
     },
     povostradicionais: {
-        type: String,
+        type: Number,
         required: true,
     },
     politicassociais: {
-        type: String,
+        type: Number,
         required: true,
     },
     segurancapublica: {
-        type: String,
+        type: Number,
         required: true,
     },
     drogas: {
-        type: String,
+        type: Number,
         required: true,
     },
     comunicacao: {
-        type: String,
+        type: Number,
         required: true,
     },
     democracia: {
-        type: String,
+        type: Number,
         required: true,
     },
 
     meioambiente: {
-        type:String,
+        type: Number,
         required: true,
 
     },
