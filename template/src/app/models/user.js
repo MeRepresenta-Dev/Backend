@@ -30,8 +30,8 @@ const UserSchema = new dynamoose.Schema({
         type: String,
         required: true,
     },
-  
-  confirmaSenha: {
+
+    confirmaSenha: {
         type: String,
         required: true,
     },
@@ -49,15 +49,15 @@ const UserSchema = new dynamoose.Schema({
     },
     facebook: {
         type: String,
-       
+
     },
     instagram: {
         type: String,
-        
+
     },
     twitter: {
         type: String,
-        
+
     },
 
     photo: {
@@ -65,28 +65,28 @@ const UserSchema = new dynamoose.Schema({
         required: true,
 
     },
-   descricaoCandidaturaColetiva: {
+    descricaoCandidaturaColetiva: {
         type: String,
         required: true,
 
     },
-  
-  cor: {
+
+    cor: {
         type: String,
         required: true,
     },
-  
-  orientacaoSexualAfetiva: {
+
+    orientacaoSexualAfetiva: {
         type: String,
         required: true,
     },
- 
-  identidadedeGenero: {
+
+    identidadedeGenero: {
         type: String,
         required: true,
     },
-     
-  deficiencia: {
+
+    deficiencia: {
         type: String,
         required: true,
 
@@ -109,8 +109,8 @@ const UserSchema = new dynamoose.Schema({
         required: true,
 
     },
-  
-  pauta4: {
+
+    pauta4: {
         type: String,
         required: true,
 
@@ -374,36 +374,3 @@ exports.list = (perPage, page) => {
             });
     });
 };
-
-function requestVerificationCode(PhoneNumber) {
-    const url = `${apiBaseUrl}/request-verification-code`;
-    const headers = new Headers();
-    headers.append('Content-Type', defaultHeaders['Content-Type']);
-    const body = JSON.stringify({ phoneNumber: phone });
-    const init = {
-        method: 'POST',
-        mode: 'no-cors',
-        headers,
-        body
-    };
-    const request = new Request(url);
-    return fetch(request, init);
-}
-
-function verifyVerificationCode(code, PhoneNumber) {
-    const url = `${apiBaseUrl}/verify-verification-code`;
-    const headers = new Headers();
-    headers.append('Content-Type', defaultHeaders['Content-Type']);
-    const body = JSON.stringify({
-        verificationCode: code,
-        phoneNumber
-    });
-    const init = {
-        method: 'POST',
-        mode: 'no-cors',
-        headers,
-        body
-    };
-    const request = new Request(url);
-    return fetch(request, init);
-}
