@@ -48,9 +48,9 @@ routes.post('/mail', MailController.store);
 routes.post('/sendmail', MailController.sendMail);
 
 
-routes.post('/register', UserController.register) // Cria conta no banco de dados
-routes.post('/registerForm', FormController.registerForm)
-    //routes.post('/save', Temas.save) // Cria conta no banco de dados
+// routes.post('/register', UserController.register) // Cria conta no banco de dados
+// routes.post('/registerForm', FormController.registerForm)
+//     //routes.post('/save', Temas.save) // Cria conta no banco de dados
 
 
 routes.post('/file', multer(multerConfig).single('file'), FileController.main);
