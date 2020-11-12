@@ -11,7 +11,6 @@ const FormController = require('./app/controllers/Form');
 const Session = require('../src/app/models/sessions');
 const User = require('./app/models/user');
 const UserForm = require('./app/models/form');
-const Temas = require('./app/models/temas');
 const bcrypt = require('bcryptjs');
 const auth = require('auth');
 const authMid = require('./app/middlewares/auth');
@@ -48,7 +47,7 @@ routes.post('/mail', MailController.store);
 routes.post('/sendmail', MailController.sendMail);
 
 
-// routes.post('/register', UserController.register) // Cria conta no banco de dados
+routes.post('/register', UserController.register) // Cria conta no banco de dados
 // routes.post('/registerForm', FormController.registerForm)
 //     //routes.post('/save', Temas.save) // Cria conta no banco de dados
 
