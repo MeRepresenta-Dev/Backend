@@ -47,9 +47,6 @@ routes.post('/user', UserController.auth);
 routes.post('/mail', MailController.store);
 routes.post('/sendmail', MailController.sendMail);
 
-routes.post('/sms', SMSController.main);
-routes.post('/sms', SMSController.sendSms);
-routes.post('/validatesms', SMSController.validateSms);
 
 routes.post('/register', UserController.register) // Cria conta no banco de dados
 routes.post('/registerForm', FormController.registerForm)
