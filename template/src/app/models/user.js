@@ -30,6 +30,11 @@ const UserSchema = new dynamoose.Schema({
         type: String,
         required: true,
     },
+  
+  confirmaSenha: {
+        type: String,
+        required: true,
+    },
     cpf: {
         type: String,
         required: true,
@@ -39,23 +44,49 @@ const UserSchema = new dynamoose.Schema({
         required: true,
     },
     secao: {
-        type: Number,
+        type: String,
         required: true,
     },
     facebook: {
         type: String,
-        required: true,
+       
     },
     instagram: {
         type: String,
-        required: true,
+        
     },
     twitter: {
         type: String,
-        required: true,
+        
     },
 
     photo: {
+        type: String,
+        required: true,
+
+    },
+   descricaoCandidaturaColetiva: {
+        type: String,
+        required: true,
+
+    },
+  
+  cor: {
+        type: String,
+        required: true,
+    },
+  
+  orientacaoSexualAfetiva: {
+        type: String,
+        required: true,
+    },
+ 
+  identidadedeGenero: {
+        type: String,
+        required: true,
+    },
+     
+  deficiencia: {
         type: String,
         required: true,
 
@@ -74,6 +105,12 @@ const UserSchema = new dynamoose.Schema({
     },
 
     pauta3: {
+        type: String,
+        required: true,
+
+    },
+  
+  pauta4: {
         type: String,
         required: true,
 
@@ -212,44 +249,44 @@ const UserSchema = new dynamoose.Schema({
     },
 
     genero: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     raca: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     lgbt: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     povostradicionais: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     politicassociais: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     segurancapublica: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     drogas: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     comunicacao: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
     democracia: {
-        type: isInteger,
+        type: Number,
         required: true,
     },
 
     meioambiente: {
-        type: isInteger,
+        type: Number,
         required: true,
 
     },
