@@ -51,7 +51,7 @@ class UserController {
     register(req, res) {
         const { name, email, password, cpf, telefone, secao, facebook, confirmaSenha, instagram, twitter, deficiencia, photo, cor, descricaoCandidaturaColetiva, identidadedeGenero, orientacaoSexualAfetiva, pauta1, pauta2, pauta3, pauta4, pauta5, pauta6, pauta7, pauta8, pauta9, pauta10, pauta11, pauta12, pauta13, pauta14, pauta15, pauta16, pauta17, pauta18, pauta19, pauta20, pauta21, pauta22, pauta23, pauta24, genero, raca, lgbt, povostradicionais, politicassociais, segurancapublica, drogas, comunicacao, democracia, meioambiente } = req.body;
 
-        const code = Math.floor(1000 + Math.random() * 9000);
+      //  const code = Math.floor(1000 + Math.random() * 9000);
 
         //         const params = {
         //           PhoneNumber: telefone,
