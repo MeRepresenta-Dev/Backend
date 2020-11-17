@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_ENV=production node src/app.js",
+    "email": "NODE_ENV=production node sender/app.js",
     "dev": "NODE_ENV=development npx nodemon src/app.js",
     "lint": "npx eslint --fix ."
   },
@@ -16,6 +17,7 @@
     "aws-sdk": "^2.764.0",
     "bcryptjs": "^2.4.3",
     "cors": "^2.8.5",
+    "csv-parser": "^2.3.3",
     "dotenv": "^8.2.0",
     "dynamoose": "^2.3.0",
     "express": "^4.17.1",
