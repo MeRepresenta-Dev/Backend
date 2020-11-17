@@ -13,7 +13,7 @@ fs.createReadStream(filePath)
       const dataParsed = data['0'];
       const email = dataParsed.split('|');
 
-      await sendMail(email);
+      await sendMail(email[6]);
     } catch (err) {
       logger.error(err);
     }
