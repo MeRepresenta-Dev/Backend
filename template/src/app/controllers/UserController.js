@@ -141,12 +141,12 @@ class UserController {
                 console.log(err);
                 return res.status(400).json({ error: 'O Usuário já existe!' });
               }
-
-              return res.json({ message: 'Usuário foi criado!' });
             }
           );
         });
       });
+
+    return res.json({ message: 'Usuário foi criado!' });
   }
 }
 module.exports = new UserController();
