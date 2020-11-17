@@ -3,7 +3,7 @@ const mailTransport = require('../../config/mail');
 class MailController {
   async store(req, res) {
     await mailTransport.sendMail({
-      to: 'lsoares267@gmail.com',
+      to: 'contato@merepresenta.org.br',
       from: 'no-reply@merepresenta.org.br',
       subject: 'Teste de e-mail',
       template: 'email',
