@@ -24,6 +24,12 @@ Run ESlint
 npm run lint
 ```
 
+Run email-sender with .csv file
+
+```
+npm run email
+``` 
+
 
 ### ENV
 
