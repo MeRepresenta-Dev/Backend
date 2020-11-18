@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "email-base": "NODE_ENV=production node sender/app_database.js",
     "start": "NODE_ENV=production node src/app.js",
     "email": "NODE_ENV=production node sender/app.js",
     "dev": "NODE_ENV=development npx nodemon src/app.js",

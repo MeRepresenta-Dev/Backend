@@ -1,13 +1,13 @@
 const express = require('express');
 const path = require('path');
 const multer = require('multer');
+const bcrypt = require('bcryptjs');
 const multerConfig = require('./config/multer');
 const UserController = require('./app/controllers/UserController');
 const MailController = require('./app/controllers/MailController');
 const FileController = require('./app/controllers/FileController');
-const Session = require('../src/app/models/sessions');
+const Session = require('./app/models/sessions');
 const User = require('./app/models/user');
-const bcrypt = require('bcryptjs');
 
 const routes = express.Router();
 
